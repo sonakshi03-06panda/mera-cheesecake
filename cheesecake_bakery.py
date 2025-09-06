@@ -78,8 +78,6 @@ st.markdown(
 )
 
 
-st.title("MERA CHEESEEEECAKE BAKERY")
-
 st.header("Order Your Favorite Cheesecake")
 
 # Cheesecake options, prices, and placeholder images
