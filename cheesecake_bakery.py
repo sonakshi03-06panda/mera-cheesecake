@@ -145,20 +145,24 @@ st.header("Customer Feedback")
 # File to store feedbacks
 FEEDBACK_FILE = "feedbacks.txt"
 
-def save_feedback(feedback_text):
+def save_feedback(name, phone, feedback_text):
     with open(FEEDBACK_FILE, "a", encoding="utf-8") as f:
         if os.path.getsize(FEEDBACK_FILE) > 0:
             f.write("\n---\n")
-        f.write(feedback_text.strip())
+        f.write(f"Name: {name}\nPhone: {phone}\nFeedback: {feedback_text.strip()}")
 
+# Feedback form with Name, Phone, Feedback
 with st.form("feedback_form"):
-    feedback = st.text_area("Write your feedback or review here:") 
+    name = st.text_input("Your Name:")
+    phone = st.text_input("Your Phone Number:")
+    feedback = st.text_area("Write your feedback or review here:")
+    
     submitted = st.form_submit_button("Submit Feedback")
 
     if submitted:
-        if not feedback.strip():
-            st.error("Please write some feedback before submitting.")
+        if not name.strip() or not phone.strip() or not feedback.strip():
+            st.error("Please fill in all fields before submitting.")
         else:
-            save_feedback(feedback)
-            st.success("Thank you for your feedback!")
+            save_feedback(name, phone, feedback)
+            st.success("Thank you for your feedback! We’ll keep in touch if needed.")
             st.experimental_rerun()
