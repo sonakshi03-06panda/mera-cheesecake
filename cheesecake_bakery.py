@@ -1,3 +1,7 @@
+import streamlit as st
+import os
+
+# Inject custom CSS for pastel background and font
 st.markdown(
     """
     <style>
