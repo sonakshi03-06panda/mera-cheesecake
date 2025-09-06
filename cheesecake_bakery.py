@@ -108,8 +108,8 @@ else:
     st.write("### Your Order:")
     for cake, qty in order.items():
         if qty > 0:
-            st.write(f"- {cake}: {qty} x ${cheesecakes[cake]['price']} = ${qty * cheesecakes[cake]['price']:.2f}")
-    st.write(f"**Total Price:** ${total_price:.2f}")
+            st.write(f"- {cake}: {qty} x ₹{cheesecakes[cake]['price']} = ₹{qty * cheesecakes[cake]['price']:.2f}")
+    st.write(f"**Total Price:** ₹{total_price:.2f}")
     st.write(f"**Delivery Method:** {delivery}")
     if delivery == "Home Delivery":
         st.write(f"**Delivery Address:** {address}")
