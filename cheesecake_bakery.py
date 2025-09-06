@@ -1,57 +1,56 @@
-import streamlit as st
-import os
-
-# --- Inject custom CSS for pastel background and font ---
 st.markdown(
     """
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
-    html, body, [class*="css"]  {
-        background: linear-gradient(135deg, #fcefee, #f9f0ff, #e0f7fa, #fff9e6);
-        font-family: 'Poppins', sans-serif;
-        color: #4a4a4a;
+    /* Force light mode background */
+    html, body, .main, .block-container {
+        background: linear-gradient(135deg, #fcefee, #f9f0ff, #e0f7fa, #fff9e6) !important;
+        font-family: 'Poppins', sans-serif !important;
+        color: #4a4a4a !important;
     }
 
+    /* Override Streamlit dark mode backgrounds */
+    .css-1d391kg, .css-1v3fvcr {
+        background: transparent !important;
+    }
+
+    /* Buttons */
     .stButton>button {
-        background-color: #f7c6c7;
-        color: #4a4a4a;
-        font-weight: 600;
-        border-radius: 10px;
-        padding: 8px 20px;
-        transition: background-color 0.3s ease;
+        background-color: #f7c6c7 !important;
+        color: #4a4a4a !important;
+        font-weight: 600 !important;
+        border-radius: 10px !important;
+        padding: 8px 20px !important;
+        transition: background-color 0.3s ease !important;
     }
     .stButton>button:hover {
-        background-color: #f9a1a3;
-        color: white;
+        background-color: #f9a1a3 !important;
+        color: white !important;
     }
 
-    .stTextInput>div>input, .stTextArea>div>textarea {
-        border-radius: 10px;
-        border: 1.5px solid #f7c6c7;
-        padding: 8px;
-        font-family: 'Poppins', sans-serif;
+    /* Inputs */
+    .stTextInput>div>input, .stTextArea>div>textarea, .stNumberInput>div>input {
+        border-radius: 10px !important;
+        border: 1.5px solid #f7c6c7 !important;
+        padding: 8px !important;
+        font-family: 'Poppins', sans-serif !important;
+        background-color: #fff !important;
+        color: #4a4a4a !important;
     }
 
-    .stNumberInput>div>input {
-        border-radius: 10px;
-        border: 1.5px solid #f7c6c7;
-        padding: 8px;
-        font-family: 'Poppins', sans-serif;
-    }
-
-    /* Style headers */
+    /* Headers */
     h1, h2, h3, h4 {
-        color: #7b4f72;
+        color: #7b4f72 !important;
     }
 
     /* Feedback boxes */
     .feedback-box {
-        background-color: #fff0f5;
-        border-radius: 12px;
-        padding: 15px;
-        margin-bottom: 15px;
-        box-shadow: 2px 2px 8px rgba(123, 79, 114, 0.15);
+        background-color: #fff0f5 !important;
+        border-radius: 12px !important;
+        padding: 15px !important;
+        margin-bottom: 15px !important;
+        box-shadow: 2px 2px 8px rgba(123, 79, 114, 0.15) !important;
     }
     </style>
     """,
