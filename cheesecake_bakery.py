@@ -5,18 +5,28 @@ import os
 st.markdown(
     """
     <style>
-    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&family=Space+Mono&display=swap');
 
     /* Force light mode background */
     html, body, .main, .block-container {
         background: linear-gradient(135deg, #fcefee, #f9f0ff, #e0f7fa, #fff9e6) !important;
-        font-family: 'Poppins', sans-serif !important;
+        font-family: 'Space Mono', monospace !important;
         color: #4a4a4a !important;
     }
 
     /* Override Streamlit dark mode backgrounds */
     .css-1d391kg, .css-1v3fvcr {
         background: transparent !important;
+    }
+
+    /* Center and style the main title */
+    .css-1v0mbdj h1, .css-1v0mbdj h1 {
+        font-family: 'Syne Mono', monospace !important;
+        text-align: center !important;
+        font-weight: 700 !important;
+        font-size: 3rem !important;
+        margin-bottom: 1rem !important;
+        color: #7b4f72 !important;
     }
 
     /* Buttons */
@@ -27,6 +37,7 @@ st.markdown(
         border-radius: 10px !important;
         padding: 8px 20px !important;
         transition: background-color 0.3s ease !important;
+        font-family: 'Space Mono', monospace !important;
     }
     .stButton>button:hover {
         background-color: #f9a1a3 !important;
@@ -38,14 +49,15 @@ st.markdown(
         border-radius: 10px !important;
         border: 1.5px solid #f7c6c7 !important;
         padding: 8px !important;
-        font-family: 'Poppins', sans-serif !important;
+        font-family: 'Space Mono', monospace !important;
         background-color: #fff !important;
         color: #4a4a4a !important;
     }
 
-    /* Headers */
-    h1, h2, h3, h4 {
+    /* Headers except main title */
+    h2, h3, h4 {
         color: #7b4f72 !important;
+        font-family: 'Space Mono', monospace !important;
     }
 
     /* Feedback boxes */
@@ -55,11 +67,13 @@ st.markdown(
         padding: 15px !important;
         margin-bottom: 15px !important;
         box-shadow: 2px 2px 8px rgba(123, 79, 114, 0.15) !important;
+        font-family: 'Space Mono', monospace !important;
     }
     </style>
     """,
     unsafe_allow_html=True,
 )
+
 
 st.title("MERA CHEESEEEECAKE BAKERY")
 
