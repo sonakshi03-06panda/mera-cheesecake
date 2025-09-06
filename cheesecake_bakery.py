@@ -145,29 +145,14 @@ st.header("Customer Feedback")
 # File to store feedbacks
 FEEDBACK_FILE = "feedbacks.txt"
 
-def load_feedbacks():
-    if not os.path.exists(FEEDBACK_FILE):
-        return []
-    with open(FEEDBACK_FILE, "r", encoding="utf-8") as f:
-        feedbacks = f.read().strip().split("\n---\n")
-        return [fb for fb in feedbacks if fb.strip()]
-
 def save_feedback(feedback_text):
     with open(FEEDBACK_FILE, "a", encoding="utf-8") as f:
         if os.path.getsize(FEEDBACK_FILE) > 0:
             f.write("\n---\n")
         f.write(feedback_text.strip())
 
-all_feedbacks = load_feedbacks()
-if all_feedbacks:
-    st.subheader("What Our Customers Say:")
-    for i, fb in enumerate(reversed(all_feedbacks), 1):
-        st.markdown(f'<div class="feedback-box"><b>Feedback #{i}:</b><br>{fb}</div>', unsafe_allow_html=True)
-else:
-    st.info("No feedbacks yet. Be the first to leave a review!")
-
 with st.form("feedback_form"):
-    feedback = st.text_area("Write your feedback or review here:")
+    feedback = st.text_area("Write your feedback or review here:") 
     submitted = st.form_submit_button("Submit Feedback")
 
     if submitted:
