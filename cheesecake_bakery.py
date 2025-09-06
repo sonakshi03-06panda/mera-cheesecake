@@ -7,20 +7,15 @@ st.markdown(
     <style>
     @import url('https://fonts.googleapis.com/css2?family=Syne+Mono&family=Space+Mono&display=swap');
 
-    /* Force light mode background */
+    /* Background and base font */
     html, body, .main, .block-container {
         background: linear-gradient(135deg, #fcefee, #f9f0ff, #e0f7fa, #fff9e6) !important;
         font-family: 'Space Mono', monospace !important;
         color: #4a4a4a !important;
     }
 
-    /* Override Streamlit dark mode backgrounds */
-    .css-1d391kg, .css-1v3fvcr {
-        background: transparent !important;
-    }
-
-    /* Center and style the main title */
-    .css-1v0mbdj h1, .css-1v0mbdj h1 {
+    /* Title styling */
+    .main-title {
         font-family: 'Syne Mono', monospace !important;
         text-align: center !important;
         font-weight: 700 !important;
@@ -72,6 +67,14 @@ st.markdown(
     </style>
     """,
     unsafe_allow_html=True,
+)
+
+# Use markdown with custom class for title
+st.markdown(
+    """
+    <h1 class="main-title">MERA CHEESEEEECAKE BAKERY</h1>
+    """,
+    unsafe_allow_html=True
 )
 
 
