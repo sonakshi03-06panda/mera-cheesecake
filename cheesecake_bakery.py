@@ -72,13 +72,13 @@ st.markdown(
 # Use markdown with custom class for title
 st.markdown(
     """
-    <h1 class="main-title">MERA CHEESEEEECAKE BAKERY</h1>
+    <h1 class="main-title">MERA CHEESECAKE BAKERY</h1>
     """,
     unsafe_allow_html=True
 )
 
 
-st.header("Order Your Favorite Cheesecake")
+st.header("Order Your Fav")
 
 # Cheesecake options, prices, and placeholder images
 cheesecakes = {
