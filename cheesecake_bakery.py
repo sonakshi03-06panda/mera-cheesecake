@@ -7,9 +7,9 @@ st.header("Order Your Favorite Cheesecake")
 
 # Cheesecake options and prices
 cheesecakes = {
-    "Nutella Cheesecake": 15.0,
-    "Biscoff Cheesecake": 14.0,
-    "New York Cheesecake": 13.0
+    "Nutella Cheesecake": 250.0,
+    "Biscoff Cheesecake": 250.0,
+    "New York Cheesecake": 200.0
 }
 
 order = {}
@@ -17,7 +17,7 @@ total_price = 0.0
 
 st.subheader("Select Quantity")
 for cake, price in cheesecakes.items():
-    qty = st.number_input(f"{cake} (${price} each)", min_value=0, max_value=20, value=0, step=1)
+    qty = st.number_input(f"{cake} (₹{price} each)", min_value=0, max_value=20, value=0, step=1)
     order[cake] = qty
     total_price += qty * price
 
